@@ -3,10 +3,11 @@ module Locomotive
 
     include Locomotive::Mongoid::Document
 
-    ROLES = %w(author designer admin)
+    ROLES = %w(normal author designer admin)
 
     ## fields ##
-    field :role, default: 'author'
+    #field :role, default: 'author'
+    field :role, default: 'normal'
 
     ## associations ##
     belongs_to  :account, class_name: 'Locomotive::Account', validate: false
