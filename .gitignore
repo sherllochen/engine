@@ -63,3 +63,4 @@ Cheffile
 Cheffile.lock
 Vagrantfile
 cookbooks/
+.idea/
