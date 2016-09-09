@@ -19,7 +19,8 @@ module Locomotive
       default_locale:               :en,
       mailer_sender:                'support@example.com',
       unsafe_token_authentication:  false,
-      enable_registration:          true,
+      # enable_registration:          true,
+      enable_registration:          false,
       ui:                     {
         per_page:     10
       },
@@ -28,7 +29,8 @@ module Locomotive
         metastore:    URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/meta"), # URI encoded in case of spaces
         entitystore:  URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/body")
       },
-      devise_modules:               [:registerable, :rememberable, :database_authenticatable, :recoverable, :trackable, :validatable, :encryptable, { encryptor: :sha1 }],
+      # devise_modules:               [:registerable, :rememberable, :database_authenticatable, :recoverable, :trackable, :validatable, :encryptable, { encryptor: :sha1 }],
+      devise_modules:               [:rememberable, :database_authenticatable, :recoverable, :trackable, :validatable, :encryptable, { encryptor: :sha1 }],
       steam_image_resizer_secret:   'please change it'
     }
 
