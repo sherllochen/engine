@@ -20,7 +20,11 @@ module Locomotive
       if cn_site.memberships.where(account_id:resource.id).first.normal?
         content_type = cn_site.content_types.where(slug: 'faculities').first
         own_entry = content_type.entries.where(email:current_locomotive_account.email).first
-        edit_content_entry_path(cn_site, content_type.slug, own_entry)
+        if own_entry
+          edit_content_entry_path(cn_site, content_type.slug, own_entry)
+        else
+          new_content_entry_path(cn_site, content_type.slug)
+        end
       else
         current_site? ? dashboard_path(current_site) : sites_path
       end
