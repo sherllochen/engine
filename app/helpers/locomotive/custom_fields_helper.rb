@@ -94,7 +94,7 @@ module Locomotive
         wrapper_html: { class: css },
         input_html:   {
           data:       { format: format },
-          maxlength:  10
+          maxlength:  format.length
         }
       }
     end
