@@ -1,7 +1,7 @@
 window.Select2Helpers = (->
 
   default_build_options = (input) ->
-    minimumInputLength:   1
+    minimumInputLength:   0
     quietMillis:          100
     formatNoMatches:      input.data('no-matches')
     formatSearching:      input.data('searching')
